@@ -1,6 +1,15 @@
 const btn = document.querySelector(".get-users-btn");
 const container = document.querySelector(".container");
 
+function initPopovers() {
+  const popoverTriggerList = document.querySelectorAll(
+    '[data-bs-toggle="popover"]'
+  );
+  const popoverList = [...popoverTriggerList].map(
+    (popoverTriggerEl) => new bootstrap.Popover(popoverTriggerEl)
+  );
+}
+
 function getUsers(callback) {
   const request = new XMLHttpRequest();
   request.open("GET", "https://jsonplaceholder.typicode.com/users");
