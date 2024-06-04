@@ -35,5 +35,5 @@ function renderUsers(response) {
 }
 
 btn.addEventListener("click", (e) => {
-  getUsers(renderUsers);
+  sendRequest(renderUsers);
 });
