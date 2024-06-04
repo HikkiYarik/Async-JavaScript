@@ -14,7 +14,7 @@ function renderUsers(response) {
       "data-bs-title",
       "Дополнительная информация про человека:"
     );
-    userBtn.setAttribute("data-bs-content", "privet");
+    userBtn.setAttribute("data-bs-content", `${user.username}`);
 
     const title = document.createElement("h5");
     title.classList.add("card-title");
