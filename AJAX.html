@@ -18,63 +18,77 @@
     </div>
     <br />
     <div class="container">
-      <form class="col-12" name="addUser">
-        <div class="mb-3 col-5">
-          <label for="exampleInputName1" class="form-label">Name</label>
-          <input
-            type="text"
-            name="name"
-            class="form-control"
-            id="exampleInputname1"
-            aria-describedby="nameHelp"
-          />
+      <div class="task-list-wrapper active">
+        <div class="form-section mt-5">
+          <div class="container">
+            <div class="row">
+              <div class="col col-8 mx-auto">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Add new task</h5>
+                      <form name="addUser">
+                        <div class="mb-3">
+                          <label for="exampleInputName1" class="form-label">Name</label>
+                          <input
+                            type="text"
+                            name="name"
+                            class="form-control"
+                            id="exampleInputname1"
+                            aria-describedby="nameHelp"
+                          />
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleInputUserName1" class="form-label">UserName</label>
+                          <input
+                            type="text"
+                            name="username"
+                            class="form-control"
+                            id="exampleInputUserName1"
+                            aria-describedby="UserNameHelp"
+                          />
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleInputEmail1" class="form-label">Email</label>
+                          <input
+                            type="email"
+                            name="email"
+                            class="form-control"
+                            id="exampleInputEmail1"
+                            aria-describedby="emailHelp"
+                          />
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleInputphone1" class="form-label">Phone</label>
+                          <input
+                            type="number"
+                            name="phone"
+                            class="form-control"
+                            id="exampleInputphone1"
+                            aria-describedby="phoneHelp"
+                          />
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleInputWebsite1" class="form-label">Website</label>
+                          <input
+                            type="text"
+                            name="website"
+                            class="form-control"
+                            id="exampleInputWebsite1"
+                            aria-describedby="WebsiteHelp"
+                          />
+                        </div>
+                        <div class="mb-3 form-check">
+                          <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+                          <label class="form-check-label" for="exampleCheck1">Check me</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send</button>
+                      </form>
+                   </div>
+                </div>
+            </div>
         </div>
-        <div class="mb-3 col-5">
-          <label for="exampleInputUserName1" class="form-label">UserName</label>
-          <input
-            type="text"
-            name="username"
-            class="form-control"
-            id="exampleInputUserName1"
-            aria-describedby="UserNameHelp"
-          />
-        </div>
-        <div class="mb-3 col-5">
-          <label for="exampleInputEmail1" class="form-label">Email</label>
-          <input
-            type="email"
-            name="email"
-            class="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-          />
-        </div>
-        <div class="mb-3 col-5">
-          <label for="exampleInputphone1" class="form-label">Phone</label>
-          <input
-            type="number"
-            name="phone"
-            class="form-control"
-            id="exampleInputphone1"
-            aria-describedby="phoneHelp"
-          />
-        </div>
-        <div class="mb-3 col-5">
-          <label for="exampleInputWebsite1" class="form-label">Website</label>
-          <input
-            type="text"
-            name="website"
-            class="form-control"
-            id="exampleInputWebsite1"
-            aria-describedby="WebsiteHelp"
-          />
-        </div>
-        <div class="mb-3 form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-          <label class="form-check-label" for="exampleCheck1">Check me</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Send</button>
-      </form>
+    </div>
+</div>
     </div>
     <br />
     <div class="container users-container"></div>
