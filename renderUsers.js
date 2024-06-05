@@ -1,3 +1,4 @@
+//ну тут особо объяснять не надо, функция рендеринга
 function renderUsers(response) {
   const fragment = document.createDocumentFragment();
   response.forEach((user) => {
@@ -31,9 +32,11 @@ function renderUsers(response) {
     fragment.appendChild(card);
   });
   container.appendChild(fragment);
+  //ajax является асинхронным, поэтому код BS может выполняться до того, как он будет выполнен, поэтому нужно вызвать его после завершения ajax и рендеринга
   initPopovers();
 }
 
+//обработчик событий на нашу кнопочку где мы и передаём все параметры в наш sendRequest
 btn.addEventListener("click", (e) => {
-  sendRequest(renderUsers);
+  sendRequest(renderUsers, "GET", requestURL);
 });
