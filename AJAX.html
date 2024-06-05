@@ -12,11 +12,76 @@
     <title>AJAX</title>
   </head>
   <body>
-    <h1>AJAX</h1>
-    <button class="btn button btn-primary get-users-btn">Get Users</button>
-    <div class="container"></div>
+    <div class="d-flex justify-content-center">
+      <h1>AJAX</h1>
+      <button class="btn button btn-primary get-users-btn">Get Users</button>
+    </div>
+    <br />
+    <div class="container">
+      <form class="col-12" name="addUser">
+        <div class="mb-3 col-5">
+          <label for="exampleInputName1" class="form-label">Name</label>
+          <input
+            type="text"
+            name="name"
+            class="form-control"
+            id="exampleInputname1"
+            aria-describedby="nameHelp"
+          />
+        </div>
+        <div class="mb-3 col-5">
+          <label for="exampleInputUserName1" class="form-label">UserName</label>
+          <input
+            type="text"
+            name="username"
+            class="form-control"
+            id="exampleInputUserName1"
+            aria-describedby="UserNameHelp"
+          />
+        </div>
+        <div class="mb-3 col-5">
+          <label for="exampleInputEmail1" class="form-label">Email</label>
+          <input
+            type="email"
+            name="email"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+          />
+        </div>
+        <div class="mb-3 col-5">
+          <label for="exampleInputphone1" class="form-label">Phone</label>
+          <input
+            type="number"
+            name="phone"
+            class="form-control"
+            id="exampleInputphone1"
+            aria-describedby="phoneHelp"
+          />
+        </div>
+        <div class="mb-3 col-5">
+          <label for="exampleInputWebsite1" class="form-label">Website</label>
+          <input
+            type="text"
+            name="website"
+            class="form-control"
+            id="exampleInputWebsite1"
+            aria-describedby="WebsiteHelp"
+          />
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+          <label class="form-check-label" for="exampleCheck1">Check me</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Send</button>
+      </form>
+    </div>
+    <br />
+    <div class="container users-container"></div>
+    <br />
     <script src="AJAX.js"></script>
     <script src="renderUsers.js"></script>
+    <script src="addUser.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
       integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"

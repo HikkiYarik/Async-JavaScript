@@ -1,7 +1,7 @@
 //кнопка добавления пользователей
 const btn = document.querySelector(".get-users-btn");
 //контейнер для пользователей
-const container = document.querySelector(".container");
+const container = document.querySelector(".users-container");
 //адрес с которого берём юзеров
 const requestURL = "https://jsonplaceholder.typicode.com/users";
 //функция для всплывающих окон
