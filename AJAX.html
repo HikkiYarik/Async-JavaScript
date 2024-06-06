@@ -18,14 +18,14 @@
     </div>
     <br />
     <div class="container">
-      <div class="task-list-wrapper active">
+      <div class="form-list-wrapper active">
         <div class="form-section mt-5">
           <div class="container">
             <div class="row">
               <div class="col col-8 mx-auto">
                 <div class="card">
                   <div class="card-body">
-                    <h5 class="card-title">Add new task</h5>
+                    <h5 class="card-title">Add new user</h5>
                       <form name="addUser">
                         <div class="mb-3">
                           <label for="exampleInputName1" class="form-label">Name</label>
@@ -77,11 +77,12 @@
                             aria-describedby="WebsiteHelp"
                           />
                         </div>
-                        <div class="mb-3 form-check">
+                        <!-- <div class="mb-3 form-check">
                           <input type="checkbox" class="form-check-input" id="exampleCheck1" />
                           <label class="form-check-label" for="exampleCheck1">Check me</label>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send</button>
+                        </div> -->
+                        <button type="submit" class="btn btn-primary btn-sendUser">Send</button>
+                        <button type="submit" class="btn btn-danger btn-addUser disabled" tabindex="-1" role="button" aria-disabled="true">Add User</button>
                       </form>
                    </div>
                 </div>

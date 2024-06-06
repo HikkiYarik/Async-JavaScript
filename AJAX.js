@@ -1,5 +1,9 @@
-//кнопка добавления пользователей
-const btn = document.querySelector(".get-users-btn");
+//кнопка добавления пользователей method GET
+const getUsersBtn = document.querySelector(".get-users-btn");
+//кнопка отправки пользователя из формы на сервер method POST
+const postUsersBtn = document.querySelector(".btn-sendUser");
+//кнопка добавления пользователя после положительного ответа сервера
+const addUsersBtn = document.querySelector(".btn-addUser");
 //контейнер для пользователей
 const container = document.querySelector(".users-container");
 //адрес с которого берём юзеров

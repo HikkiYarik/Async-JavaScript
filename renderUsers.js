@@ -37,6 +37,6 @@ function renderUsers(response) {
 }
 
 //обработчик событий на нашу кнопочку где мы и передаём все параметры в наш sendRequest
-btn.addEventListener("click", (e) => {
+getUsersBtn.addEventListener("click", (e) => {
   sendRequest(renderUsers, "GET", requestURL);
 });
