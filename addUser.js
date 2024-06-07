@@ -1,21 +1,19 @@
 // получаем нашу форму
 const form = document.forms["addUser"];
 // Кнопка отправки через Send
-postUsersBtn.addEventListener("click");
+postUsersBtn.addEventListener("click", checkedPost);
 // создаём функцию "создать пост"
 function createPost(body, callback) {
-  e.preventDefault();
   return new Promise((resolve, reject) => {
     const request = new XMLHttpRequest();
     request.open("POST", "https://jsonplaceholder.typicode.com/posts");
     request.addEventListener("load", () => {
       const response = JSON.parse(request.responseText);
-      if (request.status >= 400) {
-        reject(request.response);
-      } else {
-        resolve(request.response);
-        addUsersBtn.classList.remove("disabled");
-      }
+        // if (request.status >= 400) {
+        //   reject(request.response);
+        // } else {
+        //   resolve(request.response);
+        // }
       callback(response);
     });
     request.setRequestHeader("Content-type", "application/json; charset=UTF-8");
@@ -66,12 +64,13 @@ addUsersBtn.addEventListener("click", postNewUser);
 // Запостить юзера
 function postNewUser(e) {
   e.preventDefault();
+  // записать value из инпутов формы
   const name = form.elements.namedItem("name").value;
   const username = form.elements.namedItem("username").value;
   const email = form.elements.namedItem("email").value;
   const phone = form.elements.namedItem("phone").value;
   const website = form.elements.namedItem("website").value;
-
+  // создать объект нашего юзера из данных записанных в переменные из инпутов формы
   const newPost = {
     name: name,
     username: username,
@@ -80,13 +79,31 @@ function postNewUser(e) {
     website: website,
     user_id: `id_${Math.random() * Math.random()}`,
   };
+  // создать пост
   createPost(newPost, (response) => {
     console.log(response);
     const card = newPostTemplate(response);
     container.insertAdjacentElement("afterbegin", card);
+    addUsersBtn.classList.add("disabled");
+    form.reset();
     initPopovers();
   });
 }
 // функция проверки ответа сервера
-
-function checkedPost() {}
+// Если ответ есть то разблокируем кнопку добавления пользователя
+function checkedPost(e) {
+  e.preventDefault();
+  return new Promise((resolve, reject) => {
+    const request = new XMLHttpRequest();
+    request.open("POST", "https://jsonplaceholder.typicode.com/posts");
+    request.addEventListener("load", () => {
+      if (request.status >= 400) {
+        reject(request.response);
+      } else {
+        resolve(request.response);
+        addUsersBtn.classList.remove("disabled");
+      }
+    });
+    request.send();
+  });
+}
