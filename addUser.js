@@ -1,11 +1,5 @@
 // получаем нашу форму
 const form = document.forms["addUser"];
-// алерт в форме при неправильном введении поля
-const enterAlert = document.querySelector(".form-alert");
-// поле в котором пишется, что не введено.
-const whatEntered = document.querySelector(".whats-no-entered");
-// алерт успешной операции
-const enterSuccesfully = document.querySelector(".form-succesfully");
 // создаём функцию "создать пост"
 function createPost(body, callback) {
   return new Promise((resolve, reject) => {
@@ -16,29 +10,8 @@ function createPost(body, callback) {
       //   console.log(response);
       if (request.status >= 400) {
         reject(request.response);
-      } else if (response.name.length == 0) {
-        reject(request.response);
-        enterAlert.classList.remove("d-none");
-        whatEntered.textContent = "name";
-      } else if (response.username.length == 0) {
-        reject(request.response);
-        enterAlert.classList.remove("d-none");
-        whatEntered.textContent = "username";
-      } else if (response.email.length == 0) {
-        reject(request.response);
-        enterAlert.classList.remove("d-none");
-        whatEntered.textContent = "email";
-      } else if (response.phone.length == 0) {
-        reject(request.response);
-        enterAlert.classList.remove("d-none");
-        whatEntered.textContent = "phone";
-      } else if (response.website.length == 0) {
-        resolve(request.response);
-        enterSuccesfully.classList.remove("d-none");
-        response.website = "without website";
       } else {
         resolve(request.response);
-        enterSuccesfully.classList.remove("d-none");
       }
       callback(response);
     });
