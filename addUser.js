@@ -51,29 +51,36 @@ function newPostTemplate(post) {
 }
 // кнопка добавления поста в html
 addUsersBtn.addEventListener("click", postNewUser);
+
 // Запостить юзера
 function postNewUser(e) {
   e.preventDefault();
-  // записать value из инпутов формы
-  const name = form.elements.namedItem("name").value;
-  const username = form.elements.namedItem("username").value;
-  const email = form.elements.namedItem("email").value;
-  const phone = form.elements.namedItem("phone").value;
-  const website = form.elements.namedItem("website").value;
-  // создать объект нашего юзера из данных записанных в переменные из инпутов формы
-  const newPost = {
-    name: name,
-    username: username,
-    email: email,
-    phone: phone,
-    website: website,
-    user_id: `id_${Math.random() * Math.random()}`,
-  };
-  // создать пост
-  createPost(newPost, (response) => {
-    const card = newPostTemplate(response);
-    container.insertAdjacentElement("afterbegin", card);
-    form.reset();
-    initPopovers();
-  });
+  // всю логику всовываем в if для проверки валидности формы. Почему? Потому-что по стандарту валидацию мы отключили в строчке сверху
+  if (form.checkValidity()) {
+    // записать value из инпутов формы
+    const name = form.elements.namedItem("name").value;
+    const username = form.elements.namedItem("username").value;
+    const email = form.elements.namedItem("email").value;
+    const phone = form.elements.namedItem("phone").value;
+    const website = form.elements.namedItem("website").value;
+    // создать объект нашего юзера из данных записанных в переменные из инпутов формы
+    const newPost = {
+      name: name,
+      username: username,
+      email: email,
+      phone: phone,
+      website: website,
+      user_id: `id_${Math.random() * Math.random()}`,
+    };
+    // создать пост
+    createPost(newPost, (response) => {
+      const card = newPostTemplate(response);
+      container.insertAdjacentElement("afterbegin", card);
+      form.reset();
+      initPopovers();
+    });
+    // а если не валидно дать ошибку и не выполнить логику
+  } else {
+    form.classList.add("was-validated");
+  }
 }
